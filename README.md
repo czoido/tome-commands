@@ -1,4 +1,4 @@
-# My Tome Utilities 🛠️
+# tome-commands
 
 This repository contains a collection of **tome** commands designed to assist
 with various development and utility tasks. These scripts are managed and run
