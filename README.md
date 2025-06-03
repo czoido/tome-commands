@@ -21,7 +21,7 @@ After installation, the commands will be available under their respective
 namespaces (e.g., `utils`). You can see all installed commands from this Tome by
 running `tome list`.
 
-[utils:get-folder-contents](./utils/get-folder-contents.py)
+## tome utils:get-folder-contents ([source code](./utils/get-folder-contents.py))
 
 This command recursively searches a directory, finds files matching specified
 patterns, and concatenates their contents into a single output. This is
