@@ -93,3 +93,64 @@ $ tome utils:get-folder-contents "src/*.py" --format json
 }
 ]
 ```
+
+### `utils:get-issue` ([source code](./utils/issue_fetcher.py))
+
+This command fetches the full conversation (initial post and all comments) from
+a public GitHub issue URL and formats it for easy reading or for input into a
+Large Language Model (LLM).
+
+**Prerequisites:**
+* Requires the `GH_TOKEN` environment variable to be set with a GitHub Personal
+  Access Token. This token is used for authenticated read-only access to the
+  GitHub API to avoid rate limiting.
+
+**Basic Usage:** To fetch the conversation for a specific GitHub issue:
+
+```
+$ tome utils:get-issue "[https://github.com/owner/repo/issues/123](https://github.com/owner/repo/issues/123)"
+```
+
+**Output Formats:** The command supports different output formats using the
+global `--format` option provided by **tome**:
+
+* **Text (default):** Outputs the formatted issue title, body, and comments in a
+  human-readable plain text format. Warnings (e.g., if pagination limits comment
+  retrieval) are printed to stderr.
+
+```
+$ tome utils:get-issue "[https://github.com/octocat/Spoon-Knife/issues/1](https://github.com/octocat/Spoon-Knife/issues/1)"
+GitHub Issue Conversation: octocat/Spoon-Knife #1
+URL: [https://github.com/octocat/Spoon-Knife/issues/1](https://github.com/octocat/Spoon-Knife/issues/1)
+Title: Test issue
+Status: open
+----------------------------------------
+Opened by: @octocat on 2011-04-10 20:09:31 UTC
+----------------------------------------
+ISSUE DESCRIPTION:
+This is a test issue
+========================================
+
+COMMENTS:
+
+----------------------------------------
+Comment by @octocat on 2011-04-10 20:19:31 UTC
+----------------------------------------
+This is a comment
+----------------------------------------
+```
+
+* **JSON (`--format json`):** Outputs a JSON object containing the action,
+  status, URL, title, any warnings, and the full `conversation_text`.
+
+```
+$ tome utils:get-issue "[https://github.com/octocat/Spoon-Knife/issues/1](https://github.com/octocat/Spoon-Knife/issues/1)" --format json
+{
+    "status": "success",
+    "conversation_text": "GitHub Issue Conversation: octocat/Spoon-Knife #1\nURL: [https://github.com/octocat/Spoon-Knife/issues/1](https://github.com/octocat/Spoon-Knife/issues/1)...",
+    "warnings": [],
+    "url": "[https://github.com/octocat/Spoon-Knife/issues/1](https://github.com/octocat/Spoon-Knife/issues/1)",
+    "title": "Test issue",
+    "action": "get_issue"
+}
+```
