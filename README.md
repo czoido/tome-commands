@@ -21,7 +21,7 @@ After installation, the commands will be available under their respective
 namespaces (e.g., `utils`). You can see all installed commands from this Tome by
 running `tome list`.
 
-## tome utils:get-folder-contents ([source code](./utils/get-folder-contents.py))
+## `tome utils:get-folder-contents` ([source code](./utils/get-folder-contents.py))
 
 This command recursively searches a directory, finds files matching specified
 patterns, and concatenates their contents into a single output. This is
@@ -94,7 +94,7 @@ $ tome utils:get-folder-contents "src/*.py" --format json
 ]
 ```
 
-### `utils:get-issue` ([source code](./utils/issue_fetcher.py))
+## `utils:get-issue` ([source code](./utils/issue_fetcher.py))
 
 This command fetches the full conversation (initial post and all comments) from
 a public GitHub issue URL and formats it for easy reading or for input into a
