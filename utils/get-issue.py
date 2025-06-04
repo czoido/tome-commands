@@ -155,8 +155,7 @@ def gic_json_formatter(data):
 @tome_command(formatters={"text": gic_text_formatter, "json": gic_json_formatter})
 def get_issue(tome_api, parser, *args):
     """
-    Fetches a GitHub issue conversation (initial post and comments).
-    Requires the GH_TOKEN environment variable to be set.
+    Fetches a GitHub issue conversation; requires GH_TOKEN env var.
     """
     parser.add_argument(
         "url", 
