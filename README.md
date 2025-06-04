@@ -108,7 +108,7 @@ Large Language Model (LLM).
 **Basic Usage:** To fetch the conversation for a specific GitHub issue:
 
 ```
-$ tome utils:get-issue "[https://github.com/owner/repo/issues/123](https://github.com/owner/repo/issues/123)"
+$ tome utils:get-issue "https://github.com/owner/repo/issues/123"
 ```
 
 **Output Formats:** The command supports different output formats using the
@@ -119,7 +119,7 @@ global `--format` option provided by **tome**:
   retrieval) are printed to stderr.
 
 ```
-$ tome utils:get-issue "[https://github.com/octocat/Spoon-Knife/issues/1](https://github.com/octocat/Spoon-Knife/issues/1)"
+$ tome utils:get-issue "https://github.com/octocat/Spoon-Knife/issues/1"
 GitHub Issue Conversation: octocat/Spoon-Knife #1
 URL: [https://github.com/octocat/Spoon-Knife/issues/1](https://github.com/octocat/Spoon-Knife/issues/1)
 Title: Test issue
@@ -144,7 +144,7 @@ This is a comment
   status, URL, title, any warnings, and the full `conversation_text`.
 
 ```
-$ tome utils:get-issue "[https://github.com/octocat/Spoon-Knife/issues/1](https://github.com/octocat/Spoon-Knife/issues/1)" --format json
+$ tome utils:get-issue "https://github.com/octocat/Spoon-Knife/issues/1" --format json
 {
     "status": "success",
     "conversation_text": "GitHub Issue Conversation: octocat/Spoon-Knife #1\nURL: [https://github.com/octocat/Spoon-Knife/issues/1](https://github.com/octocat/Spoon-Knife/issues/1)...",
