@@ -94,7 +94,7 @@ $ tome utils:get-folder-contents "src/*.py" --format json
 ]
 ```
 
-## `utils:get-issue` ([source code](./utils/issue_fetcher.py))
+## `tome utils:get-issue` ([source code](./utils/issue_fetcher.py))
 
 This command fetches the full conversation (initial post and all comments) from
 a public GitHub issue URL and formats it for easy reading or for input into a
