@@ -166,7 +166,7 @@ $ tome utils:get-issue "https://github.com/octocat/Spoon-Knife/issues/1" --forma
 }
 ```
 
-### `utils:get-pr` ([source code](./utils/get-pr.py))
+## `tome utils:get-pr` ([source code](./utils/get-pr.py))
 
 Fetches GitHub Pull Request (PR) details, including its description, general
 comments, review comments on the diff, and the code diff itself. This is useful
