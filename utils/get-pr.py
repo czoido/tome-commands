@@ -135,7 +135,7 @@ def fetch_formatted_pr_data(owner, repo, pr_number, token):
                 "line": rc.get('line') or rc.get('original_line'),
                 "created_at": format_github_timestamp(rc.get('created_at', '')),
                 "body": rc.get('body') or "No comment body."
-            } for c in review_comments_data
+            } for rc in review_comments_data
         ],
         "diff": diff_text,
         "warnings": warnings
