@@ -186,3 +186,30 @@ $ tome utils:get-pr "[https://github.com/owner/repo/pull/456](https://github.com
 
 * **JSON (`--format json`):** Outputs a structured JSON object containing all
   fetched PR data.
+
+## `tome news:hn-top` ([source code](./news/hacker-news.py))
+
+Fetches the top stories currently on the front page of Hacker News.
+
+**Prerequisites:**
+
+* Requires the `requests` library. If not installed, you can add it to this Tome's `requirements.txt` file before installation.
+
+**Basic Usage:**
+
+```bash
+# Get the top 10 stories (default)
+$ tome news:hn-top
+
+# Get the top 5 stories
+$ tome news:hn-top --limit 5
+```
+
+**Output Formats:**
+
+* **Text (default):** Provides a color-coded, human-readable list of stories.
+* **JSON (`--format json`):** Outputs structured JSON data for all fetched stories.
+
+```bash
+$ tome news:hn-top -l 3 --format json
+```
