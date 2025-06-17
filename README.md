@@ -176,7 +176,7 @@ for summarizing PRs or providing context to LLMs.
 PR:
 
 ```bash
-$ tome utils:get-pr "[https://github.com/owner/repo/pull/456](https://github.com/owner/repo/pull/456)"
+$ tome utils:get-pr https://github.com/owner/repo/pull/456
 ```
 
 **Output Formats:**
